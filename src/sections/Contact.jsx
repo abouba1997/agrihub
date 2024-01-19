@@ -126,6 +126,12 @@ const Contact = () => {
                     <span className="text-[#02703b] font-bold text-xl mt-4">
                       +223 77 77 82 24
                     </span>
+                    <Link
+                      to="mailto:contactagrihub@gmail.com"
+                      className="text-[#02703b] font-bold text-lg mt-4"
+                    >
+                      contactagrihub@gmail.com
+                    </Link>
                   </div>
                 </div>
               </div>
