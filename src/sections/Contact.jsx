@@ -114,7 +114,7 @@ const Contact = () => {
               <div className="flex items-center justify-center">
                 <div className="flex flex-col items-center justify-center">
                   <div className="flex items-center text-[#02703b] p-2 rounded-lg bg-gray-300">
-                    <Link to="tel:+22373810023">
+                    <Link to="tel:+22377778224">
                       <HiPhone className="text-[28px] lg:text-[40px]" />
                     </Link>
                   </div>
@@ -124,7 +124,7 @@ const Contact = () => {
                   <div className="flex flex-col items-center text-gray-900 text-center">
                     <span>Nous sommes toujours heureux de vous aider.</span>
                     <span className="text-[#02703b] font-bold text-xl mt-4">
-                      94671596 / 73810023
+                      +223 77 77 82 24
                     </span>
                   </div>
                 </div>
