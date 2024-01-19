@@ -29,8 +29,8 @@ const BgImgStyle = {
 };
 
 const NavbarLinks = [
-  { id: 1, text: "MarketPlace", path: "/marketplace" },
   { id: 2, text: "Formations", path: "/formations" },
+  { id: 1, text: "MarketPlace", path: "/marketplace" },
   { id: 5, text: "A propos de nous", path: "/about" },
   { id: 4, text: "Bussiness", path: "/business" },
 ];

@@ -67,8 +67,8 @@ const Services = () => {
                   Facile À Cultiver
                 </p>
                 <span className="text-center text-xs sm:text-sm md:text-base leading-[5px]">
-                  Vous n&apos;avez besoin que de quelques étapes pour comprendre
-                  les etapes
+                  Explorez les processus simplement dans langagues locales
+                  (français et bambara)
                 </span>
               </div>
             </div>
@@ -80,10 +80,11 @@ const Services = () => {
               />
               <div className="max-w-[250px] text-center mb-auto">
                 <p className="font-bold text-base sm:text-xl md:text-2xl text-center">
-                  Livraison rapide
+                  Vidéo pratique
                 </p>
                 <span className="text-center text-xs sm:text-sm md:text-base">
-                  Une livraison toujours à l&apos;heure encore plus rapide
+                  Vidéo pratique couvrant toutes les phases de la production
+                  jusqu&apos;à la récolte.
                 </span>
               </div>
             </div>
@@ -98,8 +99,7 @@ const Services = () => {
                   Meilleure qualité
                 </p>
                 <span className="text-center text-xs sm:text-sm md:text-base">
-                  Non seulement rapide pour nous, la qualité est également
-                  numéro un
+                  Un réseau de distribution hautement efficace.
                 </span>
               </div>
             </div>

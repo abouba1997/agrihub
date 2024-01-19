@@ -1,6 +1,14 @@
 // CoursePage.jsx
 
-import { BgGreen2, CarrotImage } from "../assets";
+import { useSelector } from "react-redux";
+import { BgGreen1, CarrotImage, Logo2 } from "../assets";
+import {
+  selectCourses,
+  setCurrentCourse,
+} from "../features/course/courseSlice";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import ReactPlayer from "react-player";
 
 const TechniquesDeCultureDesCarottes = {
   title: "Techniques de Culture des Carottes",
@@ -36,7 +44,7 @@ const TechniquesDeCultureDesCarottes = {
 };
 
 const BgImgStyle = {
-  backgroundImage: `url(${BgGreen2})`,
+  backgroundImage: `url(${BgGreen1})`,
   backgroundPosition: "center",
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
@@ -46,62 +54,73 @@ const BgImgStyle = {
 };
 
 const CourseDetails = () => {
+  const navigate = useNavigate();
+  const { currentCourse } = useSelector(selectCourses);
+  const location = useLocation();
+
+  const imageSrc = currentCourse?.image ? currentCourse?.image : Logo2;
+  const duree = currentCourse?.duration
+    ? currentCourse.duration
+    : "10 Semaines";
+
+  useEffect(() => {
+    if (location.pathname !== "/course-details") {
+      setTimeout(() => {
+        setCurrentCourse(null);
+        navigate("/formations");
+      }, 1000);
+    }
+  }, [location, navigate]);
+
   return (
     <section
       style={BgImgStyle}
       className="flex flex-col h-screen w-full justify-center items-center px-2 pt-36 lg:px-0 text-white"
     >
-      <div className="my-4">
-        <h1 className="text-3xl font-bold text-white">
-          {TechniquesDeCultureDesCarottes.title}
-        </h1>
-      </div>
-      <div className="max-w-screen-xl w-full flex">
-        <div className="grid grid-cols-1 w-full sm:w-1/2">
-          {/* text section */}
-          <div className="flex flex-col justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 lg:pl-2 xl:ml-2 xl:pl-0">
-            <p className="px-4 sm:px-0 text-center sm:text-start font-medium text-lg min-[300px]:text-2xl sm:text-xl md:text-2xl lg:text-3xl">
-              {TechniquesDeCultureDesCarottes.description}
-            </p>
-            <p className="px-4 sm:px-0 text-center sm:text-start font-medium text-lg min-[300px]:text-2xl sm:text-xl md:text-2xl lg:text-3xl">
-              <strong>Difficulty:</strong>{" "}
-              {TechniquesDeCultureDesCarottes.difficulty}
-            </p>
-            <p className="px-4 sm:px-0 text-center sm:text-start font-medium text-lg min-[300px]:text-2xl sm:text-xl md:text-2xl lg:text-3xl">
-              <strong>Duration:</strong>{" "}
-              {TechniquesDeCultureDesCarottes.duration}
-            </p>
-          </div>
+      <div className="max-w-screen-xl w-full flex flex-col gap-10">
+        <div className="w-full">
           {/* image section */}
-          <div className="order-1 flex justify-center items-center relative">
+          <div className="order-1 flex justify-center relative">
             <div className="w-full sm:w-auto">
               {/* main image */}
               <div className="flex items-center justify-center rounded-3xl overflow-hidden">
                 <img
-                  src={CarrotImage}
+                  src={imageSrc}
                   alt="Implantation de carrot"
-                  className="w-[250px] h-[200px] sm:w-[350px] sm:h-[300px] border-[8px] border-white md:h-[350px] md:w-[350px] lg:w-[350px] lg:h-[250px] rounded-3xl mx-auto object-cover inline-block hover:scale-[1.01] hover:border-[8px] hover:border-white duration-200 cursor-pointer"
+                  className="w-[250px] h-[200px] sm:w-[350px] sm:h-[300px] border-[8px] border-white md:h-[350px] md:w-[350px] lg:w-[calc(100vh-3rem)] mx-5 lg:h-[350px] rounded-3xl object-cover inline-block hover:scale-[1.01] hover:border-[8px] hover:border-white duration-200 cursor-pointer"
                 />
               </div>
               {/* list image */}
             </div>
           </div>
+          {/* text section */}
+          <div className="flex flex-col items-center justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 lg:pl-2 xl:ml-2 xl:pl-0">
+            <p className="px-4 mt-7 sm:px-0 text-center sm:text-start font-normal text-lg min-[300px]:text-base sm:text-lg md:text-xl lg:text-xl">
+              {currentCourse?.description}
+            </p>
+            <p className="px-4 sm:px-0 text-center sm:text-start font-medium text-lg min-[300px]:text-base sm:text-lg md:text-xl lg:text-xl">
+              <strong>Duration:</strong> {duree}
+            </p>
+          </div>
         </div>
-        <div className="w-full sm:w-1/2">
+        <div className="w-full sm:pl-44">
+          <h1 className="text-3xl font-bold text-white text-center sm:text-left">
+            {currentCourse?.titre}
+          </h1>
           <h2 className="text-2xl mt-6 mb-4">Sections du Cours :</h2>
           <ul>
             {TechniquesDeCultureDesCarottes.parts.map((part, index) => (
               <li key={index} className="mb-6">
                 <h3 className="text-xl font-semibold mb-2">{part.title}</h3>
-                <p className="text-gray-600 mb-2">{part.description}</p>
-                <a
-                  href={part.videoUrl}
-                  className="text-blue-500 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Watch Video
-                </a>
+                <p className="text-black mb-2">{part.description}</p>
+                <div className="h-72 w-[80%] rounded-xl">
+                  <ReactPlayer
+                    url="https://www.youtube.com/watch?v=iodAfFDCS5E&pp=ygUQbWFsaSBhZ3JpY3VsdHVyZQ%3D%3D"
+                    controls
+                    width="100%"
+                    height="100%"
+                  />
+                </div>
               </li>
             ))}
           </ul>

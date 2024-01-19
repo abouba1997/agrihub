@@ -1,81 +1,99 @@
 import { useDispatch, useSelector } from "react-redux";
-import { BgGreen2 } from "../assets";
+import {
+  AnanasImage,
+  BgGreen2,
+  CarrotImage,
+  FillePlantationImage,
+  GarsImage,
+  OrangeImage,
+  SaladImage,
+  TerrainImage,
+  TomateImage,
+} from "../assets";
 import { CourseCard } from "../components";
 import { fetchCourses, selectCourses } from "../features/course/courseSlice";
 import { useEffect } from "react";
 
 const courses_i = [
   {
-    title: "Advanced Mathematics",
+    titre: "Production des Carrottes",
+    image: CarrotImage,
     description:
-      "Explore advanced mathematical concepts and problem-solving techniques.",
-    instructor: "Prof. Smith",
-    duration: "12 weeks",
-    level: "Intermediate",
-    price: 99.99,
-  },
-  {
-    title: "Data Structures and Algorithms",
-    description:
-      "Master the fundamentals of data structures and algorithms for efficient programming.",
+      "Maîtrisez les fondamentaux des techniques avancées de culture agricole pour une agriculture efficace.",
     instructor: "Dr. Johnson",
-    duration: "10 weeks",
-    level: "Advanced",
-    price: 129.99,
+    duration: "10 semaines",
+    level: "Avancé",
+    price: 12999,
   },
   {
-    title: "Classic Literature Appreciation",
+    titre: "Formation en production de la salade",
+    image: SaladImage,
     description:
-      "Dive into the world of classic literature and analyze timeless literary works.",
+      "Explorez le monde des cultures légumières et analysez les pratiques agricoles intemporelles.",
     instructor: "Dr. Davis",
-    duration: "8 weeks",
-    level: "Beginner",
-    price: 79.99,
+    duration: "8 semaines",
+    level: "Débutant",
+    price: 17999,
   },
   {
-    title: "World History: From Ancient to Modern Times",
+    titre: "Formation en production de la pasteques",
+    image: FillePlantationImage,
     description:
-      "Journey through the significant events that shaped our world from ancient to modern times.",
+      "Parcourez l'histoire des cultures agricoles et découvrez les pratiques qui ont façonné l'agriculture moderne.",
     instructor: "Prof. White",
-    duration: "14 weeks",
-    level: "Intermediate",
-    price: 109.99,
+    duration: "14 semaines",
+    level: "Intermédiaire",
+    price: 20000,
   },
   {
-    title: "Classic Literature Appreciation",
+    titre: "Production pratiques des cereales",
+    image: TerrainImage,
     description:
-      "Dive into the world of classic literature and analyze timeless literary works.",
+      "Explorez des concepts mathématiques appliqués à l'agriculture pour une planification efficace.",
+    instructor: "Prof. Smith",
+    duration: "12 semaines",
+    level: "Intermédiaire",
+    price: 15000,
+  },
+  {
+    titre: "Production des ananas fruitées",
+    image: AnanasImage,
+    description:
+      "Découvrez le monde des cultures fruitées et analysez les pratiques agricoles intemporelles.",
     instructor: "Dr. Davis",
-    duration: "8 weeks",
-    level: "Beginner",
-    price: 79.99,
+    duration: "8 semaines",
+    level: "Débutant",
+    price: 25000,
   },
   {
-    title: "World History: From Ancient to Modern Times",
+    titre: "Formation en production d'Hor-sol de melon",
+    image: GarsImage,
     description:
-      "Journey through the significant events that shaped our world from ancient to modern times.",
+      "Explorez les pratiques agricoles innovantes qui ont façonné l'agriculture moderne.",
     instructor: "Prof. White",
-    duration: "14 weeks",
-    level: "Intermediate",
-    price: 109.99,
+    duration: "14 semaines",
+    level: "Intermédiaire",
+    price: 35000,
   },
   {
-    title: "Classic Literature Appreciation",
+    titre: "Production des oranges",
+    image: OrangeImage,
     description:
-      "Dive into the world of classic literature and analyze timeless literary works.",
+      "Découvrez l'art de la culture fruitée et analysez les pratiques agricoles intemporelles.",
     instructor: "Dr. Davis",
-    duration: "8 weeks",
-    level: "Beginner",
-    price: 79.99,
+    duration: "8 semaines",
+    level: "Débutant",
+    price: 35000,
   },
   {
-    title: "World History: From Ancient to Modern Times",
+    titre: "Production des tomates",
+    image: TomateImage,
     description:
-      "Journey through the significant events that shaped our world from ancient to modern times.",
+      "Explorez les pratiques agricoles diversifiées qui ont façonné l'agriculture moderne.",
     instructor: "Prof. White",
-    duration: "14 weeks",
-    level: "Intermediate",
-    price: 109.99,
+    duration: "14 semaines",
+    level: "Intermédiaire",
+    price: 25500,
   },
 ];
 
@@ -101,16 +119,31 @@ const FormationsList = () => {
       style={BgImgStyle}
       className="flex h-screen w-full justify-center items-center px-2 pt-36 lg:px-0 text-white"
     >
-      <div className="bg-transparent p-4">
-        <h1 className="text-3xl sm:text-5xl font-bold mb-4">
-          Bienvenue sur AgriHub Formations plateforme
+      <div className="bg-transparent p-4 max-w-screen-xl mx-auto">
+        <h1 className="text-3xl sm:text-5xl font-bold mb-4 text-center">
+          Bienvenue sur AgriHub - Onglet formation
         </h1>
-        <p className="text-lg">
+        <div className="w-full flex flex-col sm:flex-row justify-around items-center my-4">
+          <div className="font-bold text-secondary text-xl sm:text-3xl md:text-5xl lg:text-7xl mx-2 my-2 sm:my-0 italic">
+            Video
+          </div>
+          <div className="font-bold text-secondary text-xl sm:text-3xl md:text-5xl lg:text-7xl mx-2 my-2 sm:my-0 italic">
+            Audio
+          </div>
+          <div className="font-bold text-secondary text-xl sm:text-3xl md:text-5xl lg:text-7xl mx-2 my-2 sm:my-0 italic">
+            Fichiers PDF
+          </div>
+        </div>
+        <p className="text-lg text-center mb-4">
           Découvrez une multitude de cours spécialisés pour améliorer vos
           compétences en agriculture. Explorez les dernières techniques, astuces
           et bonnes pratiques pour optimiser votre production.
         </p>
         <div className="flex flex-wrap -mx-4">
+          {courses_i?.length > 0 &&
+            courses_i?.map((course, index) => (
+              <CourseCard key={index} course={course} />
+            ))}
           {courses?.length > 0 &&
             courses?.map((course) => (
               <CourseCard key={course?.id} course={course} />

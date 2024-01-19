@@ -24,7 +24,11 @@ const courseSlice = createSlice({
     status: "idle",
     error: null,
   },
-  reducers: {},
+  reducers: {
+    setCurrentCourse: (state, action) => {
+      state.currentCourse = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCourses.pending, (state) => {
@@ -42,4 +46,5 @@ const courseSlice = createSlice({
 });
 
 export default courseSlice.reducer;
+export const { setCurrentCourse } = courseSlice.actions;
 export const selectCourses = (state) => state.courses;

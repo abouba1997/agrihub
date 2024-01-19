@@ -1,10 +1,10 @@
-import { Logo2 } from "../assets";
+import { Logo1 } from "../assets";
 
 const Search = () => {
   return (
-    <div className="flex flex-col items-center justify-center lg:py-0">
+    <div className="flex flex-col items-center justify-center lg:py-0 max-w-screen-lg w-full">
       <span className="flex flex-row items-center mb-6 text-2xl font-semibold text-gray-900">
-        <img className="w-20 md:w-28 h-auto" src={Logo2} alt="CTDIT Logo" />
+        <img className="w-20 md:w-28 h-auto" src={Logo1} alt="CTDIT Logo" />
       </span>
       <div className="w-full bg-white rounded-lg md:mt-0 sm:max-w-lg xl:p-0 space-y-2">
         <div className="p-1 sm:p-2 md:p-4 space-y-4 md:space-y-6">

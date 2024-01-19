@@ -12,7 +12,9 @@ const Modal = ({ isOpen, closeModal, children }) => {
           className="bg-white p-4 rounded-lg shadow-lg max-w-screen-md relative cursor-auto"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="">{children}</div>
+          <div className="max-w-screen-lg min-w-[250px] sm:w-[350px] md:w-[600px]">
+            {children}
+          </div>
           <div className="absolute top-0 right-0 mt-4 mr-4 flex justify-end">
             <button
               className="px-1.5 py-0.5 bg-transparent rounded-md border border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300"

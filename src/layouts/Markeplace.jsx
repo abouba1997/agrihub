@@ -20,7 +20,9 @@ const Markeplace = () => {
         <p className="font-bold text-3xl">
           Se presentera la marketplace (Marche de produit agricole)
         </p>
-        <p className="font-bold italic text-xl text-secondary flex">En cours</p>
+        <p className="font-bold italic text-xl text-secondary flex">
+          Implementation de la page cours
+        </p>
         <Link
           to="/"
           className="px-2 py-1 bg-secondary text-white hover:bg-primary scale-100 hover:scale-105 transition-all duration-500 mt-6 rounded-md text-base"

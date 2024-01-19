@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { HiLocationMarker, HiOfficeBuilding, HiPhone } from "react-icons/hi";
-import { Logo1, Logo2 } from "../assets";
+import { Logo1 } from "../assets";
 import { Footer } from "../components";
 
 const Contact = () => {
@@ -80,12 +80,15 @@ const Contact = () => {
                     Information:
                   </p>
                   <div className="flex flex-row items-center justify-center">
-                    <img src={Logo2} className="h-8 me-3" alt="FlowBite Logo" />
-                    <img src={Logo1} className="h-8 me-3" alt="FlowBite Logo" />
+                    <img
+                      src={Logo1}
+                      className="h-24 rounded-full me-3"
+                      alt="FlowBite Logo"
+                    />
                   </div>
                   <div className="flex flex-col items-center text-gray-900 text-center">
-                    <span>Pizza Magic</span>
-                    <span>La boulangerie du peuple</span>
+                    <span>AgriHub Technologie</span>
+                    <span>Mali - Bamako</span>
                   </div>
                 </div>
               </div>
@@ -103,16 +106,15 @@ const Contact = () => {
                     Addresse:
                   </p>
                   <div className="flex flex-col items-center text-gray-900 text-center">
-                    <span>SebeniKoro, Bamako</span>
-                    <span>Après seulement le premier échangeur</span>
-                    <span>La boulangerie du peuple</span>
+                    <span>Hamdallaye ACI, Bamako</span>
+                    <span>Cite des affaires</span>
                   </div>
                 </div>
               </div>
               <div className="flex items-center justify-center">
                 <div className="flex flex-col items-center justify-center">
                   <div className="flex items-center text-[#02703b] p-2 rounded-lg bg-gray-300">
-                    <Link to="tel:+22375064545">
+                    <Link to="tel:+22373810023">
                       <HiPhone className="text-[28px] lg:text-[40px]" />
                     </Link>
                   </div>
