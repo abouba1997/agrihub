@@ -8,3 +8,4 @@ export { default as CourseDetails } from "./CourseDetails";
 export { default as Marketplace } from "./Markeplace";
 export { default as About } from "./About";
 export { default as Business } from "./Bussiness";
+export { default as Profile } from "./Profile";

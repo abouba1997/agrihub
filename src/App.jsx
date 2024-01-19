@@ -12,10 +12,12 @@ import {
   Main,
   Marketplace,
   NotFound,
+  Profile,
   Register,
   Root,
 } from "./layouts";
 import FormationsList from "./layouts/FormationsList";
+import { ProfilePage, UserCourses } from "./components";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +30,10 @@ const router = createBrowserRouter(
       <Route path="/marketplace" element={<Marketplace />} />
       <Route path="/about" element={<About />} />
       <Route path="/business" element={<Business />} />
+      <Route path="/profile" element={<Profile />}>
+        <Route index element={<ProfilePage />} />
+        <Route path="mes-formations" element={<UserCourses />} />
+      </Route>
       <Route path="*" element={<NotFound />} />
     </Route>
   )
