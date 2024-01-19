@@ -17,3 +17,4 @@ export { default as TerrainImage } from "./images/image-terrain.jpg";
 export { default as TomateImage } from "./images/image-tomate.jpg";
 export { default as MaliFlag } from "./mali.png";
 export { default as GirlLearner } from "./images/fille-apprenant.jpg";
+export { default as IntroVideo } from "./video_preview.mp4";

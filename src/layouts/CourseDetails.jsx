@@ -1,7 +1,7 @@
 // CoursePage.jsx
 
 import { useSelector } from "react-redux";
-import { BgGreen1, CarrotImage, Logo2 } from "../assets";
+import { BgGreen1, CarrotImage, IntroVideo, Logo2 } from "../assets";
 import {
   selectCourses,
   setCurrentCourse,
@@ -115,7 +115,8 @@ const CourseDetails = () => {
                 <p className="text-black mb-2">{part.description}</p>
                 <div className="h-72 w-[80%] rounded-xl">
                   <ReactPlayer
-                    url="https://www.youtube.com/watch?v=iodAfFDCS5E&pp=ygUQbWFsaSBhZ3JpY3VsdHVyZQ%3D%3D"
+                    // url="https://www.youtube.com/watch?v=iodAfFDCS5E&pp=ygUQbWFsaSBhZ3JpY3VsdHVyZQ%3D%3D"
+                    url={IntroVideo}
                     controls
                     width="100%"
                     height="100%"

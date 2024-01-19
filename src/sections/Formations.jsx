@@ -25,31 +25,6 @@ const Formation = () => {
           />
         </Link>
       </div>
-      <div className="relative">
-        <div className="absolute top-12 z-20 w-[30%] sm:w-[40%] bg-white/35 backdrop-filter shadow-md rounded-e-full">
-          {/* Desktop and Tablet */}
-          <div className="hidden md:flex max-w-screen-lg justify-between px-2 mx-auto">
-            <ul className="flex h-12 gap-4">
-              <li className="font-medium h-full">
-                <Link
-                  to="/formations"
-                  className="text-white cursor-pointer hover:text-secondary md:text-[13px] lg:text-base h-full flex items-center relative after:absolute after:h-[2.5px] after:bottom-0"
-                >
-                  Formations
-                </Link>
-              </li>
-              <li className="font-medium h-full">
-                <Link
-                  to="/blog"
-                  className="text-white cursor-pointer hover:text-secondary md:text-[13px] lg:text-base h-full flex items-center relative after:absolute after:h-[2.5px] after:bottom-0"
-                >
-                  Blog
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
       <section
         id="home"
         style={BgImgStyle}
@@ -73,10 +48,14 @@ const Formation = () => {
                   Certification
                 </p>
               </div>
-              <div className="max-w-2xl font-normal md:text-xl lg:text-2xl my-4">
-                <span className="bg-black text-justify text-white text-xs min-[300px]:text-sm min-[640px]:text-[13px] md:text-lg lg:text-xl xl:text-3xl font-light italic rounded-e-full py-2 px-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptates eaque similique explicabo nostrum, quisquam dolorum
+              <div className="max-w-2xl font-normal md:text-base lg:text-lg my-4 bg-black/50 rounded-md">
+                <span className="text-justify text-white text-xs min-[300px]:text-sm min-[640px]:text-[13px] md:text-lg lg:text-xl xl:text-3xl font-light italic rounded-e-full py-2 px-4">
+                  Nos cours offrent une expérience d&apos;apprentissage
+                  entièrement en ligne, garantissant une flexibilité maximale
+                  pour les apprenants. En mettant l&apos;accent sur la pratique,
+                  nos programmes sont conçus pour être immersifs, permettant aux
+                  participants d&apos;appliquer directement leurs connaissances
+                  dans des situations réelles.
                 </span>
               </div>
               <div>
